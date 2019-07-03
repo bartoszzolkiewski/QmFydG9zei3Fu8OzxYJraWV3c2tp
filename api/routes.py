@@ -24,7 +24,7 @@ async def update(request):
 
     if url_obj is None:
         # podano id url'a którego nie posiadamy w pamięci
-        raise ServerError("Unknown obj id %s" % url_id, status_code = 400)
+        raise ServerError("Nie znaleziono obiektu o id %s" % url_id, status_code = 400)
 
     return json(url_obj.as_dict(fields = ['id',]))
 
